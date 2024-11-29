@@ -13,8 +13,9 @@ This analysis provides insight into power consumption patterns and revenue gener
 - Calculating Year-on-Year percentage change for each customer
 
 ## Dashboard  
-This is a screenshot of the dashboard created to aid visualisation of my analysis
-![Dashboard]()
+This is a screenshot of the dashboard created to aid visualisation of my analysis  
+
+![Dashboard](Projuect_files/power_network_dashboard.png)
 
 ## Table of Contents
 ___
