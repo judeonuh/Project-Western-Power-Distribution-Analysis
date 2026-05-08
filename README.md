@@ -22,7 +22,7 @@ ___
 - [Description](#description)
 - [Aim and Objectives](#aim-and-objectives)
 - [Dashboard](#dashboard)
-- [Technologies](#technologies)
+- [Skills Demonstrated](#skills-demonstrated)
 - [Data Sources](#data-sources)
 - [Data Cleaning and Preprocessing](#data-cleaning-and-preprocessing)
 - [Data Analysis](#data-analysis)
