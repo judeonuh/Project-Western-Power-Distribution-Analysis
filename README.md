@@ -2,7 +2,7 @@
 ___  
 
 ## Description  
-This project builds a scalable Excel financial model for a power distribution company, automating 5-year fixed charge calculations across multiple network regions and customer bands, eliminating manual rebuilds when onboarding new regions.
+This project builds a scalable Excel financial model for a power distribution company, automating 5-year fixed charge calculations across four (4) network regions and customer bands, eliminating manual rebuilds when onboarding new regions.
 
 ---
 
