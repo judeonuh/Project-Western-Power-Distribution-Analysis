@@ -6,6 +6,10 @@ This project builds a scalable Excel financial model for a power distribution co
 
 ---
 
+![title img](img/power_image.jpg)  
+
+---
+
 ## Aim and Objectives  
 This analysis provides insight into power consumption patterns and revenue generation. This will be achieved by:
 - Calculating Annual Import Fixed Charges (AFC) for all customers from their Import Fixed Charges (IFC).
@@ -21,7 +25,9 @@ This analysis provides insight into power consumption patterns and revenue gener
 - [Data Sources](#data-sources)
 - [Data Cleaning](#data-cleaning)
 - [Preprocessing for Modelling](#preprocessing-for-modelling)
-- [Analysis and Modelling](#analysis-and-modelling)
+- [Analysis](#analysis)  
+- [Modelling](#modelling)
+- [Conclusion](#conclusion)  
 
 ---
 
@@ -52,14 +58,14 @@ To prepare the datasets for modelling:
 ---
 
 ### Analysis
-Analysis was performed on one region - East Midlands (EMEB), using the template provided [here](Template_Excel_Model_EMEB.xlsx). This will then be used as a model for automating calculations across the remaining regions. Analysis performed include: 
+Analysis was performed on one region - East Midlands (EMEB), using the template provided [here](Template_Excel_Model_EMEB.xlsx). This will then be used as a model for automating calculations across the remaining regions. Analysis performed includes: 
     - Annual fixed charges for all years, based on Bands
     - YoY change for all Bands  
 
 ![AFC by bands](img/EMEB_AFC_by_bands_bar.png)  
 ![YoY](img/EMEB_YoY.png)
 
-* Band 1 (blue) is the dominant cost driver in every year it appears materially. In 2022 it reached approximately £1.35M — the single highest value in the entire dataset — and in 2024 it sits at roughly £1.2M. This band alone accounts for the majority of total annual fixed charges in both those years, suggesting it represents either the largest customer segment or the highest-tariff customer category.
+* Band 1 (blue) is the dominant cost driver in every year it appears materially. In 2022, it reached approximately £1.35M — the single highest value in the entire dataset — and in 2024 it sits at roughly £1.2M. This band alone accounts for the majority of total annual fixed charges in both those years, suggesting it represents either the largest customer segment or the highest-tariff customer category.
 * The 2022 spike is the most significant event in the data. Every band reached its peak in 2022. This simultaneous surge across all bands strongly suggests an external driver — most likely the 2022 UK energy price shock following the Russia-Ukraine conflict — rather than organic customer growth. This is worth flagging as a structural event rather than a business trend.
 * All four bands are compressed very close to zero in 2020 and 2021, with values likely below £100K each. The contrast with 2022 is stark. This could reflect suppressed energy demand during the COVID-19 pandemic, lower underlying tariff rates in those years, or a smaller customer base prior to growth.
 * The year-on-year increases in 2022 are extraordinary by any measure. Band 4 led with +1,601.53%, followed by Band 1 at +1,568.12%, Band 2 at +1,197.33%, and Band 3 at +350.69%. These are not growth figures — they appear to be evidence of a fundamental regulatory or tariff restructuring under the Targeted Charging Review (TCR), implemented to reform how fixed network costs are recovered. Crucially, Band 3 was the least affected at 350%, suggesting it may have been partially sheltered from the TCR redistribution, or that it had a different starting base that made the absolute change less severe in percentage terms.
@@ -70,19 +76,30 @@ Analysis was performed on one region - East Midlands (EMEB), using the template 
 ---
 
 ### Modelling
-The template above was used as a model to replicate similar analysis for a new region - West Midlands (MIDE). To do this:
+The template above was used as a model to replicate a similar analysis for a new region - West Midlands (MIDE). To do this:
 1. A duplicate of the template worksheet (EMEB) was created and named according to the new region to be analysed (MIDE)
 2. The Data links were changed on the new worksheet. To do this:
     - Click on the 'Data' tab, and then click on 'Edit links'. This will reveal all linked workbooks
-    - Replace each workbook with corresponding one from the Midlands region. i.e, replace 'EMEB 2020' workbook with 'MIDE 2020'. To achieve this, from the open dialog box, select the workbook to be replaced, then click on 'Change Source' (as shown below).
+    - Replace each workbook with the corresponding one from the Midlands region. i.e, replace 'EMEB 2020' workbook with 'MIDE 2020'. To achieve this, from the open dialogue box, select the workbook to be replaced, then click on 'Change Source' (as shown below).
     - Next, select the corresponding new region's workbook.
-    - Repeat the steps above for year 2021, 2022, 2023, and 2024. Click 'Close' when all the source links are changed.
+    - Repeat the steps above for years 2021, 2022, 2023, and 2024. Click 'Close' when all the source links are changed.
 3. Steps I & II above were repeated for other regions, using the datasets [here](Projuect_files)  
 
 ![change source](img/workbooks_dialog_box.png)  
 
+---
+
 > [!WARNING]
-> As the source links are being changed, some values in the data may disappear. This is absolutely normal. All the values and 'DNO Area' should update (as shown below) once all the source links are changed.  
+> As the source links are being changed, some values in the data may disappear. This is absolutely normal. All the values and 'DNO Area' should update (as shown below) once all the source links are changed.
+
+---
+
+> [!CAUTION]
+> It is recommended to break all links before exporting or sharing your model with others, for security reasons.
+> Go to "Data" Tab, click on "Edit Links", select all links and click "Break link".
+> NOTE: Broken links can not be undone!
+
+---
 
 ![EMEB](img/emeb.png)  
 ![MIDE](img/mide.png)  
@@ -90,6 +107,6 @@ The template above was used as a model to replicate similar analysis for a new r
 ---
 
 ### Conclusion
-This model is functional and has been tested in production. It succesfully automates 5-year fixed charge calculations across multiple network regions and customer bands, eliminating manual rebuilds when onboarding new regions.
+This model is functional and has been tested in production. It successfully automates 5-year fixed charge calculations across multiple network regions and customer bands, eliminating manual rebuilds when onboarding new regions.
 
 ---
